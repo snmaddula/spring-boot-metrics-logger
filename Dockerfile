@@ -1,6 +1,6 @@
 FROM java:8-jdk-alpine
 
-COPY ./target/basic-boot-app.jar /usr/app/App.jar
+COPY ./target/spring-boot-metrics-logger.jar /usr/app/App.jar
 
 WORKDIR /usr/app
 
