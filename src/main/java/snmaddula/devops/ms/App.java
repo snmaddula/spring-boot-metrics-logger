@@ -44,7 +44,7 @@ public @SpringBootApplication class App {
 	private static Integer[] mem = {};
 
 	public @GetMapping("{n}") List<Citizen> getAllCitizens(@PathVariable(required=false) Integer n) throws Exception {
-		mem = new Integer[Integer.MAX_VALUE / 9];
+		mem = new Integer[Integer.MAX_VALUE / 12];
 		return new ArrayList<Citizen>() {{
 			rangeClosed(1, n != null ? n : 1).forEach(i -> addAll(getAll()));
 		}
