@@ -1,9 +1,11 @@
 FROM java:8-jdk-alpine
 
-COPY ./target/spring-boot-metrics-logger.jar /usr/app/app.jar
+COPY ./target/spring-boot-metrics-logger.jar /usr/app/App.jar
 
 WORKDIR /usr/app
 
-RUN sh -c 'app.jar'
+RUN sh -c 'touch App.jar'
 
-ENTRYPOINT ["java","-jar","app.jar"]
+EXPOSE 80
+
+ENTRYPOINT ["java","-jar","App.jar"]
