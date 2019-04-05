@@ -41,10 +41,8 @@ public @SpringBootApplication class App {
 	private final JdbcTemplate jdbc;
 	private final MetricsEndpoint metricsEndpoint;
 	private final ObjectMapper mapper = new ObjectMapper();
-	private static Integer[] mem = {};
 
 	public @GetMapping("{n}") List<Citizen> getAllCitizens(@PathVariable(required=false) Integer n) throws Exception {
-		mem = new Integer[Integer.MAX_VALUE / 12];
 		return new ArrayList<Citizen>() {{
 			rangeClosed(1, n != null ? n : 1).forEach(i -> addAll(getAll()));
 		}
