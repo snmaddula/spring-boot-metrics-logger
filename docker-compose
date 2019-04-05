@@ -1,0 +1,19 @@
+version: '3'
+
+services: 
+  docker-postgresql:
+    image: postgres:latest
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=citizens
+      - POSTGRES_PASSWORD=postgres
+  basic-boot-app:
+    image: basic-boot-app
+    depends_on:
+      - docker-postgresql
+    ports:
+      - 8080:8080
+    environment:
+      - PG_JDBC_URL=jdbc:postgresql://docker-postgresql/citizens
+      - PG_USERNAME=postgres
+      - PG_PASSWORD=postgres

@@ -1,0 +1,5 @@
+1. First run : 
+	 docker build -t basic-boot-app .
+
+2. Next, run compose:
+	 docker-compose up

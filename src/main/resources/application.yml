@@ -1,0 +1,40 @@
+server: 
+  port: 80
+  servlet:
+    context-path: /citizens
+    
+spring:
+  datasource:
+    url: ${PG_JDBC_URL}
+    username: ${PG_USERNAME}
+    password: ${PG_PASSWORD}
+    initialization-mode: always
+
+app:
+  select-all: 'SELECT * FROM CITIZEN'
+  metrics:
+    - jvm.memory.max
+    - jdbc.connections.active
+    - hikaricp.connections.active
+    - jvm.memory.used
+    - system.cpu.count
+    - system.cpu.usage
+    - jvm.gc.memory.allocated
+    - jvm.gc.memory.promoted
+    - jvm.gc.live.data.size
+    - jvm.threads.live
+    - jvm.threads.peak
+    - process.uptime
+    - process.start.time
+    - process.cpu.usage
+    - http.server.requests
+  scheduler:
+    delay: 500
+
+logging:
+  level:
+    org: ERROR
+    com: ERROR
+    dell.devops.ms: INFO  
+
+    
