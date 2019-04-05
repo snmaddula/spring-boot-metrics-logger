@@ -1,3 +1,5 @@
+drop table if exists citizen;
+
 create table citizen (
 	id INT PRIMARY KEY,
 	firstName VARCHAR(50),
